@@ -1,0 +1,16 @@
+<!-- <section class="porcentaje">
+  <mat-checkbox (change)="cambiar()" class="example-margin" name="grafPorcentaje" [(ngModel)]="potentaje">Porcentaje</mat-checkbox>
+</section> -->
+<div [hidden]="!chart">
+  <canvas id="canvas">{{ chart }}</canvas>
+</div>
+<div class="all-btn">
+  <mat-radio-group class="example-radio-group" (change)="cambiar()" name="mitipo" [(ngModel)]="tipo">
+    <mat-radio-button class="example-radio-button" [value]="'line'">line</mat-radio-button>
+    <mat-radio-button class="example-radio-button" [value]="'radar'">radar</mat-radio-button>
+    <mat-radio-button class="example-radio-button" [value]="'polarArea'">polarArea</mat-radio-button>
+    <mat-radio-button class="example-radio-button" [value]="'bar'">bar</mat-radio-button>
+    <mat-radio-button class="example-radio-button" [value]="'pie'">pie</mat-radio-button>
+    <mat-radio-button class="example-radio-button" [value]="'doughnut'">doughnut</mat-radio-button>
+  </mat-radio-group>
+</div>

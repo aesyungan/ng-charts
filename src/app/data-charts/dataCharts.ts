@@ -9,7 +9,7 @@ export class DataCharts {
         this.labels = labels;
         this.dataSet = dataSet;
     }
-    public getData(type: String): any {
+    public getData(type: String, inPorcentaje: boolean = false): any {
         ColorAdminClass.indexCreator = 0;//index generate
         let setLst: Array<any> = [];
         this.dataSet.forEach(x => {
@@ -27,7 +27,7 @@ export class DataCharts {
                 });
                 //x.colors = ColorAdminClass.creatorColors(1, false);
             }
-            setLst.push(x.get())
+            setLst.push(x.get(inPorcentaje))
         });
 
         return {
@@ -35,7 +35,7 @@ export class DataCharts {
             datasets: setLst
         }
     }
-    private createColors() {
+    calcularPorcentaje(data: Array<number>) {
 
     }
 }
